@@ -1,0 +1,73 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <title>WorkInInternet</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <link rel="stylesheet" type="text/css" href="/assets/style.css">
+  <script src="/assets/vworldclock.js" type="text/javascript"></script>
+</head>
+<body>
+<div class="all">
+ 
+  <div class="header">
+	<table widthh = "100%" border="0">
+	<tr>
+	<td>
+	<img alt="Rails" src="/assets/h_left.jpg" />
+	</td>
+	<td>
+    <img alt="Rails" src="/assets/money.gif" />
+	</td>
+	<td>
+    <img alt="Rails" src="/assets/h_right.jpg" />
+	</td>
+	</tr>
+	</table>
+  </div>
+  
+  <div class="center">
+  
+    <% k = 0 %>
+    <% @centr_size.times do%>
+	  <%= render html: @centr_img[k].html_safe %>
+	  <% k = k + 1 %>
+	<% end %>  
+	
+  </div>  
+	
+		<div class="left">         
+		
+          <nav>
+            <ul class="nav pull-right">
+			
+			  <li><img alt="Rails" src="/assets/arrow.jpg" /> <%= link_to 'Работа в Интернете', controller: 'initial' %></li>
+			  <li><img alt="Rails" src="/assets/arrow.jpg" /> <%= link_to 'Участие в опросах', controller: 'answer' %></li>
+              <li><img alt="Rails" src="/assets/arrow.jpg" /> <%= link_to 'Разгадывание капчи', controller: 'captcha' %></li>
+			  <li><img alt="Rails" src="/assets/arrow.jpg" /> <%= link_to 'Серфинг сайтов', controller: 'click' %></li>
+			  <li><img alt="Rails" src="/assets/arrow.jpg" /> <%= link_to 'Написание статей', controller: 'writer' %></li>
+			  <li><img alt="Rails" src="/assets/arrow.jpg" /> <%= link_to 'Написание отзывов', controller: 'review' %></li>
+			  <li><img alt="Rails" src="/assets/arrow.jpg" /> <%= link_to 'Денежные бонусы', controller: 'bonus' %></li>
+			  
+            </ul>
+          </nav>
+		</div>
+		
+	<div class="right">
+
+		<div>
+			<%= @right_text %>
+		</div>
+
+		
+    </div>	
+		  
+   <div class="footer">
+      	Mikhail Koshelev © Copyright 2014 by Refsnes Data. All Rights Reserved.
+   </div>
+   
+</div>
+</body>
+</html>
+
